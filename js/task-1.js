@@ -1,3 +1,5 @@
+//*Categories
+
 // 1) Знаходження елемента #categories
 const categoriesList = document.querySelector("#categories");
 

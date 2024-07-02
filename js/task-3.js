@@ -1,3 +1,5 @@
+//*Input
+
 const userName = document.querySelector("#name-input"); // силаємось на input
 const greeting = document.querySelector("#name-output"); // силаємось на span
 
