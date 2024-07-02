@@ -83,4 +83,62 @@ align-items: flex-start;
 gap: 8px;
 }
 
+#controls {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+#boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 44px;
+}
+
+.button-create {
+  font-family: Montserrat;
+  font-size: 16px;
+font-weight: 500;
+line-height: 24px;
+letter-spacing: 0.04em;
+text-align: center;
+color: #FFFFFF;
+width: 120px;
+height: 40px;
+padding: 8px 16px;
+gap: 10px;
+border-radius: 8px;
+opacity: 0px;
+background: #4E75FF;
+border-style: none;
+}
+
+.button-destroy {
+font-family: Montserrat;
+font-size: 16px;
+font-weight: 500;
+line-height: 24px;
+letter-spacing: 0.04em;
+text-align: center;
+color: #FFFFFF;
+width: 120px;
+height: 40px;
+padding: 8px 16px;
+gap: 10px;
+border-radius: 8px;
+background: #FF4E4E;
+border-style: none;
+}
+
+.number-input {
+width: 150px;
+height: 40px;
+gap: 10px;
+border-radius: 8px;
+border: 1px;
+opacity: 0px;
+border: 1px solid #808080;
+text-align: center;
+font-size: 16px;
+}
 
