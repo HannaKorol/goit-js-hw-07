@@ -1,5 +1,6 @@
 //*Pictures
 
+//!!Стилі для картинок
 
 const images = [
   {

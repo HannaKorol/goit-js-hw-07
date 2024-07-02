@@ -1,5 +1,7 @@
 //*Categories
 
+//!Стилі для категорії
+
 // 1) Знаходження елемента #categories
 const categoriesList = document.querySelector("#categories");
 
