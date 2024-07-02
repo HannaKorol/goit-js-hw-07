@@ -29,7 +29,7 @@ body {
   object-fit: cover; /* Збереження пропорцій зображення */
 }
 
-.box {
+.boxes {
   width:30px;
   height:30px; 
   margin: 10px;
