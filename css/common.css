@@ -56,5 +56,34 @@ body {
   border-color: #4E75FF;
   border: none;
   color:#FFFFFF;
-  ; 
 }
+
+label,
+input {
+  display: block; /* Робить елементи блочними, щоб вони займали всю ширину і були один під одним */
+  gap: 8px;
+};
+
+.submit-form {
+  width: 86px;
+  height: 40px;
+  padding: 8px 16px;
+  gap: 10px;
+  border-radius: 8px 0px 0px 0px;
+  background: #4E75FF;
+  margin-top: 16px;
+  cursor: pointer;
+  color: white;
+  }
+
+.login-form {
+    width: 360px;
+    margin:0 auto;
+    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+};
+
+
