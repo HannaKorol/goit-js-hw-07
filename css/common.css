@@ -17,6 +17,7 @@ body {
   display: flex;
   flex-wrap: wrap; /* Дозволяє елементам переноситися на новий рядок */
   justify-content: space-around; /* Вирівнювання елементів по горизонталі */
+  align-items: center; 
   gap: 24px; /* Проміжок між елементами */
   list-style-type: none; /* Видалити маркери списку */
   padding: 0;

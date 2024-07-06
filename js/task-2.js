@@ -47,6 +47,6 @@ const createGalleryImgs = (images) =>
     const galleryEls = createGalleryImgs(images); // 3) групування картинок 1.li...  2.li...  3.li... в одне ціле
     console.log(galleryEls); 
 
-    galleryImgs.append(...galleryEls); // 4) Додавання картинок до списку
+    galleryImgs.append(...galleryEls); //*4) Додавання картинок до списку
 
 
