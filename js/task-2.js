@@ -27,10 +27,13 @@ const images = [
   }
 ];
 
-// 1) Cтворити пустий "ul" список для додавання посилань
+// 1) Знаходимо пустий "ul" список для додавання посилань
 const galleryImgs = document.querySelector("ul.gallery");
 
-// 2) Створення "li" картинок 
+// 2) Створюємо функцію для створення нового елемента li
+const createGalleryListItem = () => document.createElement('li');
+
+// 3) Створення картинок 
 const createGalleryImgs = (images) =>
   images.map((item) => {
       const imgEl = document.createElement("img"); // створення картинок
@@ -41,10 +44,17 @@ const createGalleryImgs = (images) =>
       return imgEl; // вивід в консоль - бо це функція
     });
 
-
-    const galleryEls = createGalleryImgs(images); // 3) групування картинок 1.li...  2.li...  3.li... в одне ціле
+// 4) Групування картинок в одне ціле
+    const galleryEls = createGalleryImgs(images);
     console.log(galleryEls); 
 
-    galleryImgs.append(...galleryEls); //*4) Додавання картинок до списку
+    // 5) Створення нового елемента li і додавання картинок до нього
+    const galleryListItem = createGalleryListItem();
+galleryListItem.append(...galleryEls); //*6) Додавання картинок до нового елемента li
+
+// 7) Додаємо новий елемент li до батьківського елемента
+galleryImgs.appendChild(galleryListItem);
+
+
 
 

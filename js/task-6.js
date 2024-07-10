@@ -9,28 +9,27 @@
 // 6. При повторному натисканні на кнопку Create поверх старої колекції має рендеритись нова. 
 // 7. Після натискання на кнопку Destroy колекція елементів має очищатися.
 
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
-}
 
+//Функція для генерації рандомного кольору
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)//використовується для генерації випадкового цілого числа в діапазоні від 0 до 16777214 (включно). Число 16777215 (або 2^24 - 1) є найбільшим 24-бітним цілим числом, яке зазвичай використовується для представлення кольорів у форматі RGB.
+    .toString(16)//перетворення числа в шістнадцятковий рядок
+    .padStart(6, 0)}`; //Додає нулі на початку рядка, щоб гарантувати, що результат завжди буде довжиною 6 символів
+}
 
 const numberCounter = document.querySelector(".number-input")// 1) Створення input 
 const createButton = document.querySelector("[data-create]"); // 2) Створення кнопки create
 const destroyButton = document.querySelector("[data-destroy]"); // Створення кнопки destroy
 const boxesContainer = document.getElementById("boxes"); // Контейнер для елементів
 
-
-
 // Додаємо обробник події для кнопки "Create"
-createButton.addEventListener('click', () => { 
+createButton.addEventListener("click", () => { 
   const amount = Number(numberCounter.value); // Отримуємо значення з поля вводу та перетворюємо його на число.
   if (amount >= 1 && amount <= 100) { // Перевіряємо чи значення в межах від 1 до 100
     createBoxes(amount); //Викликаємо функцію для створення елементів
     numberCounter.value = ''; // Після виконання цього рядка коду, значення поля вводу (input) буде очищене.
   } else {
-    alert('Please enter a number between 1 and 100'); // Якщо значення не в межах, показуємо повідомленя
+    alert("Please enter a number between 1 and 100"); // Якщо значення не в межах, показуємо повідомленя
   }
 });
 
@@ -41,14 +40,16 @@ destroyButton.addEventListener("click", destroyBoxes);
 
 // Функція для створення елементів
 function createBoxes(amount) {
-  destroyBoxes(); // Очищення попередніх елементів перед створенням нових
+  destroyBoxes(); // Очищення попередніх елементів перед створенням нових.Це необхідно для того, щоб видалити всі існуючі коробки (диви), перш ніж створювати нові. Таким чином, нові коробки додаються в чистий контейнер.
+  const fragment = document.createDocumentFragment(); // Створюємо фрагмент документу. Це дозволяє проводити багато маніпуляцій з елементами без повторного перерисування сторінки після кожної зміни.
   for (let i = 0; i < amount; i++) { // Цикл для створення заданої кількості елементів
     const box = document.createElement('div'); // Створюємо новий div
     box.style.width = `${30 + i * 10}px`; // Встановлюємо ширину
     box.style.height = `${30 + i * 10}px`; // Встановлюємо висоту
     box.style.backgroundColor = getRandomHexColor(); // Встановлюємо випадковий колір фону
-    boxesContainer.appendChild(box); // Додаємо новий елемент до контейнера
+    fragment.appendChild(box); // Додаємо новий елемент до фрагменту
   }
+  boxesContainer.appendChild(fragment); // Додаємо фрагмент до контейнера одним разом
 }
 
 //---------------------------------------------------------------------------------------------

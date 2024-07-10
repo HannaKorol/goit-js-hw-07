@@ -13,7 +13,7 @@ button.addEventListener("click", () => {
    const randomColor= getRandomHexColor(); // створюємо посилання на "випадковий колір"
    document.body.style.backgroundColor = randomColor; // Колір фону всієї сторінки
    colorSpan.textContent = randomColor; //  Background color: значення кольору 
-   colorSpan.style.color = randomColor; //Необов'язково: встановити колір тексту проміжку таким самим випадковим кольором - але це вказано в ДЗ
+   colorSpan.style.color = black; //Необов'язково: встановити колір тексту проміжку таким самим випадковим кольором - але це вказано в ДЗ
 });
 
 
